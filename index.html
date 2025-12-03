@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tehranak - سامانه املاک</title>
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Tehranak - سامانه املاک حرفه‌ای</title>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -12,15 +12,35 @@
                 extend: {
                     colors: {
                         primary: '#4A90E2',
-                        purple: '#9F40FE',
-                        green: '#50AF50',
-                        orange: '#FF9800',
-                        dark: '#1F1A35',
-                        card: '#2C2640',
+                        secondary: '#9F40FE',
+                        accent: '#00D4AA',
+                        dark: '#0F0D23',
+                        card: '#1A1832',
+                        glass: '#241F45',
                         fab: '#7D40FE'
                     },
                     fontFamily: {
                         'persian': ['Vazirmatn', 'sans-serif']
+                    },
+                    animation: {
+                        'float': 'float 3s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'slide-up': 'slide-up 0.5s ease-out',
+                        'bounce-slow': 'bounce 2s infinite'
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        },
+                        glow: {
+                            '0%': { boxShadow: '0 0 20px rgba(125, 64, 254, 0.3)' },
+                            '100%': { boxShadow: '0 0 40px rgba(125, 64, 254, 0.6), 0 0 60px rgba(125, 64, 254, 0.3)' }
+                        },
+                        'slide-up': {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        }
                     }
                 }
             }
@@ -32,74 +52,358 @@
         }
         
         body {
-            background: linear-gradient(135deg, #1F1A35 0%, #2C2640 50%, #1B162C 100%);
+            background: linear-gradient(135deg, #0F0D23 0%, #1A1832 25%, #2D2A47 50%, #1A1832 75%, #0F0D23 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
             color: white;
             margin: 0;
             padding: 0;
             min-height: 100vh;
+            overflow-x: hidden;
         }
         
-        .card-bg {
-            background: #2C2640;
-            border-radius: 12px;
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         
-        .header-bg {
-            background: #1F1A35;
-        }
-        
-        .fab-gradient {
-            background: linear-gradient(135deg, #7D40FE 0%, #5C8AFF 100%);
-            box-shadow: 0 12px 24px rgba(125, 64, 254, 0.5), 
-                        0 0 30px rgba(125, 64, 254, 0.3),
-                        inset 0 1px 0 rgba(255, 255, 255, 0.2);
-        }
-        
-        .nav-bg {
-            background: rgba(31, 26, 53, 0.95);
+        /* Glass Morphism Effects */
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
-        .hero-overlay {
-            background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.2));
+        .glass-strong {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
         
-        .text-shadow {
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        .glass-dark {
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
         
-        .stat-card {
-            transition: all 0.3s ease;
+        /* 3D Effects */
+        .card-3d {
+            background: linear-gradient(145deg, #2D2A47, #1A1832);
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.3),
+                0 4px 16px rgba(125, 64, 254, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
         
-        .stat-card:hover {
-            transform: translateY(-2px);
+        .card-3d:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.4),
+                0 8px 24px rgba(125, 64, 254, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15);
         }
         
-        .icon-purple { color: #9F40FE; }
-        .icon-blue { color: #4A90E2; }
-        .icon-green { color: #50AF50; }
-        .icon-orange { color: #FF9800; }
-        .icon-active { color: #4A90E2; }
+        /* FAB Enhanced - 3D Capsule Design */
+        .fab-3d {
+            background: linear-gradient(145deg, 
+                #7D40FE 0%, 
+                #5C8AFF 30%, 
+                #00D4AA 70%, 
+                #7D40FE 100%);
+            box-shadow: 
+                0 15px 30px rgba(125, 64, 254, 0.5),
+                0 8px 16px rgba(125, 64, 254, 0.3),
+                0 0 50px rgba(125, 64, 254, 0.4),
+                inset 0 2px 0 rgba(255, 255, 255, 0.3),
+                inset 0 -2px 0 rgba(0, 0, 0, 0.3);
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+            border-radius: 50%;
+            transform-style: preserve-3d;
+        }
+        
+        .fab-3d::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, 
+                transparent 0%, 
+                rgba(255, 255, 255, 0.2) 50%, 
+                transparent 100%);
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+        
+        .fab-3d::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            right: 2px;
+            bottom: 2px;
+            background: linear-gradient(145deg, 
+                rgba(255, 255, 255, 0.1) 0%, 
+                transparent 50%, 
+                rgba(0, 0, 0, 0.1) 100%);
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .fab-3d span {
+            position: relative;
+            z-index: 2;
+        }
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+        
+        /* Navigation Glass - 3D Capsule Design */
+        .nav-glass {
+            background: linear-gradient(145deg, 
+                rgba(15, 13, 35, 0.95) 0%, 
+                rgba(26, 24, 50, 0.9) 50%, 
+                rgba(45, 42, 71, 0.85) 100%);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border: 2px solid rgba(125, 64, 254, 0.3);
+            border-top: none;
+            border-radius: 25px 25px 0 0;
+            box-shadow: 
+                0 -8px 32px rgba(0, 0, 0, 0.5),
+                0 -16px 48px rgba(125, 64, 254, 0.2),
+                0 0 80px rgba(125, 64, 254, 0.1),
+                inset 0 2px 0 rgba(255, 255, 255, 0.1),
+                inset 0 -2px 0 rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-glass::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(125, 64, 254, 0.5) 50%, 
+                transparent 100%);
+            animation: navGlow 3s ease-in-out infinite alternate;
+        }
+        
+        @keyframes navGlow {
+            0% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        
+        /* Hero Card with 3D Effect */
+        .hero-card {
+            background: linear-gradient(145deg, #2D2A47, #1A1832);
+            border: 1px solid rgba(125, 64, 254, 0.2);
+            box-shadow: 
+                0 16px 32px rgba(0, 0, 0, 0.4),
+                0 4px 16px rgba(125, 64, 254, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+        
+        .hero-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 
+                0 24px 48px rgba(0, 0, 0, 0.5),
+                0 8px 24px rgba(125, 64, 254, 0.25),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15);
+        }
+        
+        /* Text Effects */
+        .text-glow {
+            text-shadow: 0 0 20px rgba(125, 64, 254, 0.5);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #7D40FE, #5C8AFF, #00D4AA);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Icon Effects */
+        .icon-glow {
+            filter: drop-shadow(0 0 10px currentColor);
+        }
+        
+        /* Floating Particles */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(125, 64, 254, 0.3);
+            border-radius: 50%;
+            animation: floatParticle 8s infinite linear;
+        }
+        
+        @keyframes floatParticle {
+            0% { transform: translateY(100vh) translateX(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) translateX(100px); opacity: 0; }
+        }
+        
+        /* Status Bar Enhancement */
+        .status-bar {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        /* Enhanced Header */
+        .header-3d {
+            background: linear-gradient(145deg, #1A1832, #0F0D23);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Navigation Items - 3D Capsule Design */
+        .nav-item {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            padding: 12px 16px;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 
+                0 4px 16px rgba(0, 0, 0, 0.3),
+                0 1px 4px rgba(125, 64, 254, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(145deg, rgba(125, 64, 254, 0.1), rgba(92, 138, 255, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: 25px;
+        }
+        
+        .nav-item:hover::before {
+            opacity: 1;
+        }
+        
+        .nav-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 
+                0 8px 24px rgba(0, 0, 0, 0.4),
+                0 4px 12px rgba(125, 64, 254, 0.25),
+                0 0 20px rgba(125, 64, 254, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(125, 64, 254, 0.3);
+        }
+        
+        .nav-item.active {
+            background: linear-gradient(145deg, 
+                rgba(125, 64, 254, 0.3), 
+                rgba(92, 138, 255, 0.3),
+                rgba(0, 212, 170, 0.2));
+            border: 2px solid rgba(125, 64, 254, 0.5);
+            box-shadow: 
+                0 8px 24px rgba(0, 0, 0, 0.4),
+                0 4px 16px rgba(125, 64, 254, 0.3),
+                0 0 30px rgba(125, 64, 254, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px) scale(1.02);
+            position: relative;
+        }
+        
+        .nav-item.active::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(145deg, #7D40FE, #5C8AFF, #00D4AA);
+            border-radius: 27px;
+            z-index: -1;
+            animation: activeGlow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes activeGlow {
+            0% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+        
+        /* Enhanced content shadow to separate from navigation */
+        .content-shadow {
+            box-shadow: 
+                0 -4px 20px rgba(0, 0, 0, 0.3),
+                0 -8px 32px rgba(125, 64, 254, 0.1);
+        }
     </style>
 </head>
-<body class="min-h-screen">
-    <!-- Status Bar -->
-    <div class="flex justify-between items-center px-6 py-2 text-white text-sm bg-transparent">
-        <span>۰۸:۱۷</span>
-        <span>۱۱ آذر</span>
+<body class="min-h-screen relative">
+    <!-- Floating Particles Background -->
+    <div class="particles">
+        <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 20%; animation-delay: 1s;"></div>
+        <div class="particle" style="left: 30%; animation-delay: 2s;"></div>
+        <div class="particle" style="left: 40%; animation-delay: 3s;"></div>
+        <div class="particle" style="left: 50%; animation-delay: 4s;"></div>
+        <div class="particle" style="left: 60%; animation-delay: 5s;"></div>
+        <div class="particle" style="left: 70%; animation-delay: 6s;"></div>
+        <div class="particle" style="left: 80%; animation-delay: 7s;"></div>
+        <div class="particle" style="left: 90%; animation-delay: 1.5s;"></div>
     </div>
 
-    <!-- Header -->
-    <div class="header-bg flex justify-between items-center px-6 py-4">
-        <div class="w-8 h-8 flex items-center justify-center">
+    <!-- Status Bar -->
+    <div class="status-bar flex justify-between items-center px-6 py-2 text-white text-sm">
+        <span class="font-medium">۰۸:۱۷</span>
+        <span class="font-medium">۱۱ آذر</span>
+    </div>
+
+    <!-- Enhanced Header -->
+    <div class="header-3d flex justify-between items-center px-6 py-4">
+        <div class="w-10 h-10 glass rounded-xl flex items-center justify-center cursor-pointer hover:scale-110 transition-transform">
             <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
             </svg>
         </div>
-        <div class="text-white text-lg font-medium text-center">سلام مدیر سیستم</div>
-        <div class="w-8 h-8 flex items-center justify-center">
+        <div class="text-center">
+            <div class="text-white text-lg font-bold text-glow">سلام مدیر سیستم</div>
+            <div class="text-xs text-gray-300">سامانه مدیریت املاک</div>
+        </div>
+        <div class="w-10 h-10 glass rounded-xl flex items-center justify-center cursor-pointer hover:scale-110 transition-transform">
             <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
             </svg>
@@ -107,157 +411,255 @@
     </div>
 
     <!-- Main Content -->
-    <div class="px-6 pb-24">
-        <!-- Hero Image Card -->
-        <div class="relative mb-6 rounded-3xl overflow-hidden">
+    <div class="px-6 pb-28 relative z-10 mt-2 content-shadow">
+        <!-- Hero Image Card with 3D Effect -->
+        <div class="hero-card relative mb-6 rounded-3xl overflow-hidden slide-up">
             <!-- حمام مدرن با کاشی سفید -->
-            <div class="w-full h-48 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
-                <div class="text-center text-gray-600">
-                    <svg class="w-16 h-16 mx-auto mb-2" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 7.5C14.8 6.4 14.1 5.4 13 5C12.4 4.7 11.8 4.5 11.2 4.4L11.4 3.6L12 4L12.8 2.2C12.9 2.1 13 2.1 13.1 2.1H13.5C14.3 2.1 15 2.8 15 3.6C15 3.7 15 3.8 14.9 3.9L14.7 4.1V10C14.7 11.1 15.6 12 16.7 12H18V10H16.7C16.1 10 15.6 9.6 15.6 9V4.5C15.9 4.6 16.3 4.8 16.8 5.1C18 5.5 18.8 6.5 18.9 7.7L19 9H21Z"/>
-                    </svg>
-                    <div class="text-sm">حمام مدرن با کاشی سفید مترو</div>
-                    <div class="text-xs mt-1">دوش شیشه‌ای • حوله خاکستری • آینه با قاب چوبی</div>
+            <div class="w-full h-52 bg-gradient-to-br from-gray-100 via-gray-50 to-gray-200 flex items-center justify-center relative">
+                <div class="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-purple-600/20"></div>
+                <div class="text-center text-gray-700 relative z-10">
+                    <div class="w-20 h-20 mx-auto mb-4 glass-strong rounded-2xl flex items-center justify-center">
+                        <svg class="w-12 h-12 text-purple-600" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 7.5C14.8 6.4 14.1 5.4 13 5C12.4 4.7 11.8 4.5 11.2 4.4L11.4 3.6L12 4L12.8 2.2C12.9 2.1 13 2.1 13.1 2.1H13.5C14.3 2.1 15 2.8 15 3.6C15 3.7 15 3.8 14.9 3.9L14.7 4.1V10C14.7 11.1 15.6 12 16.7 12H18V10H16.7C16.1 10 15.6 9.6 15.6 9V4.5C15.9 4.6 16.3 4.8 16.8 5.1C18 5.5 18.8 6.5 18.9 7.7L19 9H21Z"/>
+                        </svg>
+                    </div>
+                    <div class="text-lg font-bold text-gray-800 mb-2">حمام مدرن با کاشی سفید</div>
+                    <div class="text-sm text-gray-600">دوش شیشه‌ای • حوله خاکستری • آینه با قاب چوبی</div>
                 </div>
             </div>
             
-            <!-- Text Overlay -->
-            <div class="absolute bottom-0 left-0 right-0 hero-overlay p-4">
-                <div class="text-white text-shadow text-right">
-                    <div class="font-medium">آپارتمان خام (تست چیدمان)</div>
+            <!-- Enhanced Text Overlay -->
+            <div class="absolute bottom-0 left-0 right-0 p-6 glass-dark rounded-b-3xl">
+                <div class="text-white text-right">
+                    <div class="font-bold text-lg mb-1">آپارتمان خام (تست چیدمان)</div>
+                    <div class="text-xs text-gray-300">آخرین بروزرسانی: ۱۱ آذر ۱۴۰۳</div>
                 </div>
             </div>
         </div>
 
-        <!-- Statistics Cards -->
+        <!-- Enhanced Statistics Cards -->
         <div class="grid grid-cols-2 gap-4 mb-6">
             <!-- مشتریان -->
-            <div class="card-bg p-4 rounded-2xl stat-card">
-                <div class="text-xs text-white mb-2">مشتریان</div>
+            <div class="card-3d p-5 rounded-2xl slide-up" style="animation-delay: 0.1s;">
+                <div class="text-sm text-gray-300 mb-3 font-medium">مشتریان</div>
                 <div class="flex items-center justify-between">
                     <div class="text-right">
-                        <div class="text-2xl font-bold text-white">۰</div>
-                        <div class="text-xs text-gray-300">فعال</div>
+                        <div class="text-3xl font-bold text-gradient mb-1">۰</div>
+                        <div class="text-xs text-gray-400">فعال</div>
                     </div>
-                    <div class="icon-purple text-xl">👥</div>
+                    <div class="w-12 h-12 glass-strong rounded-xl flex items-center justify-center">
+                        <span class="text-2xl icon-glow">👥</span>
+                    </div>
                 </div>
             </div>
 
             <!-- کل املاک -->
-            <div class="card-bg p-4 rounded-2xl stat-card">
-                <div class="text-xs text-white mb-2">کل املاک</div>
+            <div class="card-3d p-5 rounded-2xl slide-up" style="animation-delay: 0.2s;">
+                <div class="text-sm text-gray-300 mb-3 font-medium">کل املاک</div>
                 <div class="flex items-center justify-between">
                     <div class="text-right">
-                        <div class="text-2xl font-bold text-white">۵</div>
-                        <div class="text-xs text-gray-300">فایل</div>
+                        <div class="text-3xl font-bold text-gradient mb-1">۵</div>
+                        <div class="text-xs text-gray-400">فایل</div>
                     </div>
-                    <div class="icon-blue text-xl">🏢</div>
+                    <div class="w-12 h-12 glass-strong rounded-xl flex items-center justify-center">
+                        <span class="text-2xl icon-glow">🏢</span>
+                    </div>
                 </div>
             </div>
 
             <!-- درآمد -->
-            <div class="card-bg p-4 rounded-2xl stat-card">
-                <div class="text-xs text-white mb-2">درآمد</div>
+            <div class="card-3d p-5 rounded-2xl slide-up" style="animation-delay: 0.3s;">
+                <div class="text-sm text-gray-300 mb-3 font-medium">درآمد</div>
                 <div class="flex items-center justify-between">
                     <div class="text-right">
-                        <div class="text-2xl font-bold text-white">۰م</div>
-                        <div class="text-xs text-gray-300">تومان</div>
+                        <div class="text-3xl font-bold text-gradient mb-1">۰م</div>
+                        <div class="text-xs text-gray-400">تومان</div>
                     </div>
-                    <div class="icon-green text-xl">💰</div>
+                    <div class="w-12 h-12 glass-strong rounded-xl flex items-center justify-center">
+                        <span class="text-2xl icon-glow">💰</span>
+                    </div>
                 </div>
             </div>
 
             <!-- وظایف -->
-            <div class="card-bg p-4 rounded-2xl stat-card">
-                <div class="text-xs text-white mb-2">وظایف</div>
+            <div class="card-3d p-5 rounded-2xl slide-up" style="animation-delay: 0.4s;">
+                <div class="text-sm text-gray-300 mb-3 font-medium">وظایف</div>
                 <div class="flex items-center justify-between">
                     <div class="text-right">
-                        <div class="text-2xl font-bold text-white">۰</div>
-                        <div class="text-xs text-gray-300">انجام نشده</div>
+                        <div class="text-3xl font-bold text-gradient mb-1">۰</div>
+                        <div class="text-xs text-gray-400">انجام نشده</div>
                     </div>
-                    <div class="icon-orange text-xl">📋</div>
+                    <div class="w-12 h-12 glass-strong rounded-xl flex items-center justify-center">
+                        <span class="text-2xl icon-glow">📋</span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Bottom Navigation with 6 items and FAB in center -->
-    <div class="fixed bottom-0 left-0 right-0 nav-bg border-t border-gray-600">
-        <div class="flex justify-around items-center py-4 px-2">
+    <!-- Enhanced 3D Bottom Navigation -->
+    <div class="nav-glass fixed bottom-0 left-0 right-0 z-50">
+        <div class="flex justify-around items-center py-6 px-3">
             <!-- خانه (فعال) -->
-            <div class="flex flex-col items-center cursor-pointer hover:opacity-80 transition-opacity">
-                <div class="icon-active text-xl mb-1">🏠</div>
-                <div class="icon-active text-xs">خانه</div>
+            <div class="nav-item active flex flex-col items-center cursor-pointer min-w-[60px]">
+                <div class="text-2xl mb-2 icon-glow relative z-10">🏠</div>
+                <div class="text-xs font-medium relative z-10">خانه</div>
             </div>
 
             <!-- املاک -->
-            <div class="flex flex-col items-center cursor-pointer hover:opacity-80 transition-opacity">
-                <div class="text-gray-300 text-xl mb-1">🏢</div>
-                <div class="text-gray-300 text-xs">املاک</div>
+            <div class="nav-item flex flex-col items-center cursor-pointer min-w-[60px]">
+                <div class="text-2xl mb-2 relative z-10">🏢</div>
+                <div class="text-xs relative z-10">املاک</div>
             </div>
 
-            <!-- ثبت (FAB Button) - Center -->
-            <div class="flex flex-col items-center cursor-pointer relative">
-                <button class="fab-gradient w-16 h-16 rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-2xl transform hover:scale-105 transition-all duration-200 mb-1 border-2 border-purple-300">
-                    +
+            <!-- ثبت (FAB Button) - Enhanced 3D Capsule -->
+            <div class="flex flex-col items-center cursor-pointer relative transform scale-110">
+                <button class="fab-3d w-16 h-16 flex items-center justify-center text-white text-4xl font-bold hover:scale-125 hover:rotate-180 transition-all duration-500 mb-2 animate-glow shadow-2xl">
+                    <span>+</span>
                 </button>
-                <div class="text-white text-xs font-medium">ثبت</div>
+                <div class="text-white text-xs font-medium text-shadow relative z-10">ثبت</div>
             </div>
 
             <!-- مشتریان -->
-            <div class="flex flex-col items-center cursor-pointer hover:opacity-80 transition-opacity">
-                <div class="text-gray-300 text-xl mb-1">👥</div>
-                <div class="text-gray-300 text-xs">مشتریان</div>
+            <div class="nav-item flex flex-col items-center cursor-pointer min-w-[60px]">
+                <div class="text-2xl mb-2 relative z-10">👥</div>
+                <div class="text-xs relative z-10">مشتریان</div>
             </div>
 
             <!-- وظایف -->
-            <div class="flex flex-col items-center cursor-pointer hover:opacity-80 transition-opacity">
-                <div class="text-gray-300 text-xl mb-1">📋</div>
-                <div class="text-gray-300 text-xs">وظایف</div>
+            <div class="nav-item flex flex-col items-center cursor-pointer min-w-[60px]">
+                <div class="text-2xl mb-2 relative z-10">📋</div>
+                <div class="text-xs relative z-10">وظایف</div>
             </div>
 
             <!-- کمیسیون -->
-            <div class="flex flex-col items-center cursor-pointer hover:opacity-80 transition-opacity">
-                <div class="text-gray-300 text-xl mb-1">💰</div>
-                <div class="text-gray-300 text-xs">کمیسیون</div>
+            <div class="nav-item flex flex-col items-center cursor-pointer min-w-[60px]">
+                <div class="text-2xl mb-2 relative z-10">💰</div>
+                <div class="text-xs relative z-10">کمیسیون</div>
             </div>
         </div>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('Tehranak loaded successfully! 🚀');
+            console.log('Tehranak Professional loaded! 🚀');
             
-            // Add hover effects
-            const statCards = document.querySelectorAll('.stat-card');
+            // Add enhanced hover effects
+            const statCards = document.querySelectorAll('.card-3d');
             statCards.forEach(card => {
                 card.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-4px)';
+                    this.style.transform = 'translateY(-12px) scale(1.03)';
                 });
                 
                 card.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0)';
+                    this.style.transform = 'translateY(0) scale(1)';
                 });
             });
             
-            // FAB click handler
-            const fab = document.querySelector('.fab-gradient');
+            // Enhanced FAB interactions with 3D effects
+            const fab = document.querySelector('.fab-3d');
             fab.addEventListener('click', function() {
-                console.log('FAB clicked! Opening add menu...');
-                alert('منوی افزودن باز می‌شود! 🎯');
+                this.style.animation = 'none';
+                this.offsetHeight; // Trigger reflow
+                this.style.animation = 'bounce-slow 0.6s ease-out';
+                
+                setTimeout(() => {
+                    this.style.animation = 'shine 3s infinite, glow 2s ease-in-out infinite alternate';
+                }, 600);
+                
+                // Add ripple effect
+                const ripple = document.createElement('div');
+                ripple.style.position = 'absolute';
+                ripple.style.top = '50%';
+                ripple.style.left = '50%';
+                ripple.style.width = '0';
+                ripple.style.height = '0';
+                ripple.style.background = 'rgba(255, 255, 255, 0.6)';
+                ripple.style.borderRadius = '50%';
+                ripple.style.transform = 'translate(-50%, -50%)';
+                ripple.style.animation = 'ripple 0.6s ease-out';
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+                
+                console.log('FAB clicked! Opening premium 3D add menu...');
+                alert('🎯 منوی افزودن حرفه‌ای سه‌بعدی باز می‌شود!');
             });
             
-            // Navigation click handlers
-            const navItems = document.querySelectorAll('.flex.flex-col.items-center');
+            // Add CSS for ripple animation
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes ripple {
+                    0% {
+                        width: 0;
+                        height: 0;
+                        opacity: 1;
+                    }
+                    100% {
+                        width: 100px;
+                        height: 100px;
+                        opacity: 0;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            // Floating particles animation
+            function createParticle() {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDuration = (Math.random() * 3 + 5) + 's';
+                particle.style.opacity = Math.random() * 0.5 + 0.3;
+                document.querySelector('.particles').appendChild(particle);
+                
+                setTimeout(() => {
+                    particle.remove();
+                }, 8000);
+            }
+            
+            // Create new particles periodically
+            setInterval(createParticle, 2000);
+            
+            // Enhanced 3D Navigation interactions
+            const navItems = document.querySelectorAll('.nav-item');
             navItems.forEach((item, index) => {
                 item.addEventListener('click', function(e) {
-                    // Skip FAB button
-                    if (this.querySelector('.fab-gradient')) {
+                    if (this.querySelector('.fab-3d')) {
                         return;
                     }
-                    console.log(`Navigating to section ${index + 1}`);
+                    
+                    // Add click animation
+                    this.style.transform = 'translateY(-6px) scale(1.08)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 200);
+                    
+                    // Remove active from all items
+                    navItems.forEach(navItem => navItem.classList.remove('active'));
+                    // Add active to clicked item
+                    this.classList.add('active');
+                    
+                    // Add sound effect simulation
+                    console.log(`🎵 Navigating to section ${index + 1} with 3D transition...`);
+                    
+                    // Add haptic feedback simulation
+                    if (navigator.vibrate) {
+                        navigator.vibrate(50);
+                    }
                 });
             });
+            
+            // Add entrance animations
+            setTimeout(() => {
+                document.querySelectorAll('.slide-up').forEach((element, index) => {
+                    setTimeout(() => {
+                        element.style.animation = 'slide-up 0.6s ease-out';
+                    }, index * 100);
+                });
+            }, 500);
         });
     </script>
 </body>
