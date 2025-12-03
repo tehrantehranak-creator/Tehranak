@@ -3,53 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tehranak Premium - سامانه املاک آینده</title>
+    <title>Tehranak 2025 Premium - سامانه املاک آینده</title>
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#667EEA',
-                        secondary: '#764BA2', 
-                        accent: '#00D2FF',
-                        accent2: '#3A7BD5',
+                        primary: '#6366F1',
+                        secondary: '#8B5CF6', 
+                        accent: '#06B6D4',
+                        accent2: '#10B981',
                         glass: 'rgba(255, 255, 255, 0.08)',
+                        glassStrong: 'rgba(255, 255, 255, 0.12)',
                         glassBorder: 'rgba(255, 255, 255, 0.15)',
-                        darkBg: '#0F0F1E',
-                        cardBg: 'rgba(255, 255, 255, 0.05)'
+                        darkBg: '#0A0A0F',
+                        cardBg: 'rgba(255, 255, 255, 0.05)',
+                        liquidGlass: 'rgba(255, 255, 255, 0.06)',
+                        neonBlue: '#00D4FF',
+                        neonPurple: '#8B5FFF',
+                        neonPink: '#FF0080'
                     },
                     fontFamily: {
                         'persian': ['Vazirmatn', 'sans-serif']
                     },
                     animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'glow': 'glow 3s ease-in-out infinite alternate',
-                        'pulse-slow': 'pulse 4s infinite',
-                        'bounce-slow': 'bounce 3s infinite',
-                        'rotate-slow': 'rotate 8s linear infinite',
-                        'slide-up': 'slideUp 0.6s ease-out',
-                        'scale-in': 'scaleIn 0.4s ease-out',
-                        'shimmer': 'shimmer 2s ease-in-out infinite',
-                        'particle-float': 'particleFloat 8s ease-in-out infinite'
+                        'float': 'float 8s ease-in-out infinite',
+                        'glow': 'glow 4s ease-in-out infinite alternate',
+                        'pulse-slow': 'pulse 5s infinite',
+                        'bounce-slow': 'bounce 4s infinite',
+                        'rotate-slow': 'rotate 10s linear infinite',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'scale-in': 'scaleIn 0.6s ease-out',
+                        'shimmer': 'shimmer 3s ease-in-out infinite',
+                        'particle-float': 'particleFloat 12s ease-in-out infinite',
+                        'liquid-flow': 'liquidFlow 6s ease-in-out infinite',
+                        'depth-shift': 'depthShift 8s ease-in-out infinite',
+                        'morphing': 'morphing 10s ease-in-out infinite',
+                        'cursor-trail': 'cursorTrail 0.3s ease-out',
+                        'ripple-expand': 'rippleExpand 0.8s ease-out'
                     },
                     keyframes: {
                         float: {
-                            '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
-                            '50%': { transform: 'translateY(-20px) rotate(2deg)' }
+                            '0%, 100%': { transform: 'translateY(0px) rotate(0deg) scale(1)' },
+                            '25%': { transform: 'translateY(-15px) rotate(1deg) scale(1.02)' },
+                            '50%': { transform: 'translateY(-30px) rotate(0deg) scale(1.05)' },
+                            '75%': { transform: 'translateY(-15px) rotate(-1deg) scale(1.02)' }
                         },
                         glow: {
-                            '0%': { boxShadow: '0 0 20px rgba(102, 126, 234, 0.4), 0 0 40px rgba(102, 126, 234, 0.2)' },
-                            '100%': { boxShadow: '0 0 40px rgba(102, 126, 234, 0.6), 0 0 80px rgba(102, 126, 234, 0.3)' }
+                            '0%': { 
+                                boxShadow: '0 0 20px rgba(99, 102, 241, 0.4), 0 0 40px rgba(99, 102, 241, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)' 
+                            },
+                            '100%': { 
+                                boxShadow: '0 0 40px rgba(99, 102, 241, 0.8), 0 0 80px rgba(99, 102, 241, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2)' 
+                            }
                         },
                         slideUp: {
-                            '0%': { transform: 'translateY(30px)', opacity: '0' },
+                            '0%': { transform: 'translateY(50px)', opacity: '0' },
                             '100%': { transform: 'translateY(0)', opacity: '1' }
                         },
                         scaleIn: {
-                            '0%': { transform: 'scale(0.9)', opacity: '0' },
+                            '0%': { transform: 'scale(0.8)', opacity: '0' },
                             '100%': { transform: 'scale(1)', opacity: '1' }
                         },
                         shimmer: {
@@ -57,14 +73,92 @@
                             '100%': { transform: 'translateX(100%)' }
                         },
                         particleFloat: {
-                            '0%, 100%': { transform: 'translateY(100vh) translateX(0) rotate(0deg)', opacity: '0' },
-                            '10%': { opacity: '1' },
-                            '90%': { opacity: '1' },
-                            '100%': { transform: 'translateY(-100px) translateX(50px) rotate(360deg)', opacity: '0' }
+                            '0%, 100%': { 
+                                transform: 'translateY(100vh) translateX(0) rotate(0deg) scale(0.5)', 
+                                opacity: '0' 
+                            },
+                            '10%': { opacity: '1', transform: 'translateY(90vh) translateX(10px) rotate(36deg) scale(0.8)' },
+                            '50%': { 
+                                transform: 'translateY(50vh) translateX(-20px) rotate(180deg) scale(1.2)', 
+                                opacity: '0.8' 
+                            },
+                            '90%': { opacity: '1', transform: 'translateY(10vh) translateX(30px) rotate(324deg) scale(0.9)' },
+                            '100%': { 
+                                transform: 'translateY(-100px) translateX(50px) rotate(360deg) scale(0.3)', 
+                                opacity: '0' 
+                            }
+                        },
+                        liquidFlow: {
+                            '0%, 100%': { 
+                                transform: 'translateX(0) skewX(0deg)',
+                                filter: 'hue-rotate(0deg)'
+                            },
+                            '33%': { 
+                                transform: 'translateX(10px) skewX(2deg)',
+                                filter: 'hue-rotate(120deg)'
+                            },
+                            '66%': { 
+                                transform: 'translateX(-5px) skewX(-1deg)',
+                                filter: 'hue-rotate(240deg)'
+                            }
+                        },
+                        depthShift: {
+                            '0%, 100%': { 
+                                transform: 'translateZ(0) rotateY(0deg)',
+                                filter: 'brightness(1) contrast(1)'
+                            },
+                            '50%': { 
+                                transform: 'translateZ(20px) rotateY(5deg)',
+                                filter: 'brightness(1.1) contrast(1.05)'
+                            }
+                        },
+                        morphing: {
+                            '0%, 100%': { 
+                                borderRadius: '25px 25px 25px 25px',
+                                transform: 'scale(1)'
+                            },
+                            '25%': { 
+                                borderRadius: '50px 25px 25px 25px',
+                                transform: 'scale(1.05)'
+                            },
+                            '50%': { 
+                                borderRadius: '25px 50px 25px 25px',
+                                transform: 'scale(1.1)'
+                            },
+                            '75%': { 
+                                borderRadius: '25px 25px 50px 25px',
+                                transform: 'scale(1.05)'
+                            }
+                        },
+                        cursorTrail: {
+                            '0%': { 
+                                transform: 'scale(0)',
+                                opacity: '1'
+                            },
+                            '100%': { 
+                                transform: 'scale(4)',
+                                opacity: '0'
+                            }
+                        },
+                        rippleExpand: {
+                            '0%': { 
+                                transform: 'scale(0)',
+                                opacity: '0.6'
+                            },
+                            '100%': { 
+                                transform: 'scale(8)',
+                                opacity: '0'
+                            }
                         }
                     },
                     backdropBlur: {
-                        xs: '2px',
+                        'xs': '2px',
+                        'sm': '4px',
+                        'md': '8px',
+                        'lg': '16px',
+                        'xl': '24px',
+                        '2xl': '40px',
+                        '3xl': '64px'
                     }
                 }
             }
@@ -76,84 +170,161 @@
         }
         
         body {
-            background: linear-gradient(135deg, #0F0F1E 0%, #1A1A2E 25%, #16213E 50%, #0F0F1E 75%, #000000 100%);
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(6, 182, 212, 0.2) 0%, transparent 50%),
+                linear-gradient(135deg, #0A0A0F 0%, #1A1A2E 25%, #16213E 50%, #0A0A0F 75%, #000000 100%);
             background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
+            animation: gradientShift 20s ease infinite;
             overflow-x: hidden;
+            position: relative;
         }
-        
+
         @keyframes gradientShift {
             0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
+            25% { background-position: 100% 25%; }
+            50% { background-position: 100% 100%; }
+            75% { background-position: 0% 75%; }
             100% { background-position: 0% 50%; }
         }
-        
-        /* Glass Morphism Base */
-        .glass {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            box-shadow: 
-                0 8px 32px rgba(0, 0, 0, 0.3),
-                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+
+        /* Custom Cursor */
+        .custom-cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.8), rgba(139, 92, 246, 0.6));
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease;
+            mix-blend-mode: difference;
         }
-        
-        .glass-strong {
-            background: rgba(255, 255, 255, 0.12);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+
+        .custom-cursor.hover {
+            transform: scale(2);
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.9), rgba(16, 185, 129, 0.7));
         }
-        
-        /* Premium Cards */
+
+        /* Advanced Glassmorphism - Apple Liquid Glass Style */
+        .liquid-glass {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(20px) saturate(180%) contrast(110%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%) contrast(110%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .liquid-glass::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                135deg,
+                rgba(255, 255, 255, 0.1) 0%,
+                rgba(255, 255, 255, 0.05) 25%,
+                transparent 50%,
+                rgba(255, 255, 255, 0.03) 75%,
+                rgba(255, 255, 255, 0.1) 100%
+            );
+            animation: liquidFlow 6s ease-in-out infinite;
+        }
+
+        .liquid-glass::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(
+                45deg,
+                transparent 30%,
+                rgba(99, 102, 241, 0.3) 50%,
+                transparent 70%
+            );
+            border-radius: inherit;
+            z-index: -1;
+            animation: rotate-slow 8s linear infinite;
+        }
+
+        /* Enhanced Premium Cards */
         .premium-card {
             background: linear-gradient(135deg, 
                 rgba(255, 255, 255, 0.1) 0%, 
                 rgba(255, 255, 255, 0.05) 50%, 
                 rgba(255, 255, 255, 0.02) 100%);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(25px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.12);
             box-shadow: 
-                0 20px 40px rgba(0, 0, 0, 0.4),
-                0 10px 20px rgba(102, 126, 234, 0.1),
+                0 25px 50px rgba(0, 0, 0, 0.5),
+                0 15px 30px rgba(99, 102, 241, 0.15),
                 inset 0 1px 0 rgba(255, 255, 255, 0.2);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+            overflow: hidden;
         }
-        
+
+        .premium-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.1), 
+                transparent
+            );
+            transition: left 0.8s ease;
+        }
+
+        .premium-card:hover::before {
+            left: 100%;
+        }
+
         .premium-card:hover {
-            transform: translateY(-10px) scale(1.02);
+            transform: translateY(-15px) scale(1.03) rotateX(5deg);
             box-shadow: 
-                0 30px 60px rgba(0, 0, 0, 0.5),
-                0 20px 40px rgba(102, 126, 234, 0.2),
+                0 40px 80px rgba(0, 0, 0, 0.6),
+                0 25px 50px rgba(99, 102, 241, 0.25),
                 inset 0 1px 0 rgba(255, 255, 255, 0.3);
         }
-        
-        /* Gradient Text */
+
+        /* Advanced Gradient Text with Multiple Layers */
         .gradient-text {
-            background: linear-gradient(135deg, #667EEA 0%, #764BA2 50%, #00D2FF 100%);
+            background: linear-gradient(
+                135deg, 
+                #6366F1 0%, 
+                #8B5CF6 25%, 
+                #06B6D4 50%, 
+                #10B981 75%, 
+                #F59E0B 100%
+            );
+            background-size: 300% 300%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            animation: gradientShift 8s ease infinite;
         }
-        
-        .gradient-border {
-            position: relative;
-            background: linear-gradient(135deg, #667EEA 0%, #764BA2 50%, #00D2FF 100%);
-            padding: 2px;
-            border-radius: 16px;
+
+        .neon-text {
+            text-shadow: 
+                0 0 5px currentColor,
+                0 0 10px currentColor,
+                0 0 15px currentColor,
+                0 0 20px currentColor;
+            animation: glow 3s ease-in-out infinite alternate;
         }
-        
-        .gradient-border::before {
-            content: '';
-            position: absolute;
-            inset: 2px;
-            background: rgba(15, 15, 30, 0.9);
-            border-radius: 14px;
-            z-index: -1;
-        }
-        
-        /* Floating Particles */
+
+        /* Dynamic Background Particles */
         .floating-particles {
             position: fixed;
             top: 0;
@@ -163,39 +334,79 @@
             pointer-events: none;
             z-index: 0;
         }
-        
+
         .particle {
             position: absolute;
-            width: 4px;
-            height: 4px;
-            background: linear-gradient(45deg, #667EEA, #764BA2);
+            width: 6px;
+            height: 6px;
+            background: linear-gradient(45deg, #6366F1, #8B5CF6, #06B6D4);
             border-radius: 50%;
-            animation: particleFloat 8s ease-in-out infinite;
+            animation: particleFloat 12s ease-in-out infinite;
+            box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
         }
-        
-        /* Premium Navigation */
-        .premium-nav {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(30px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 25px;
-            box-shadow: 
-                0 -10px 40px rgba(0, 0, 0, 0.4),
-                0 10px 30px rgba(102, 126, 234, 0.15),
-                inset 0 1px 0 rgba(255, 255, 255, 0.2);
-            margin: 0 25px 25px 25px;
+
+        .particle.large {
+            width: 12px;
+            height: 12px;
+            animation-duration: 15s;
         }
-        
-        .nav-item {
-            padding: 16px 24px;
-            border-radius: 20px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+        .particle.small {
+            width: 3px;
+            height: 3px;
+            animation-duration: 8s;
+        }
+
+        /* Bento Grid Layout */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            padding: 1.5rem;
+        }
+
+        .bento-card {
+            aspect-ratio: 4/3;
             position: relative;
             overflow: hidden;
         }
-        
+
+        .bento-card.tall {
+            aspect-ratio: 3/4;
+        }
+
+        .bento-card.wide {
+            aspect-ratio: 16/9;
+        }
+
+        .bento-card.square {
+            aspect-ratio: 1/1;
+        }
+
+        /* Advanced Navigation with Morphing */
+        .premium-nav {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(30px) saturate(200%);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 25px;
+            box-shadow: 
+                0 -10px 40px rgba(0, 0, 0, 0.4),
+                0 10px 30px rgba(99, 102, 241, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            margin: 0 25px 25px 25px;
+            animation: morphing 12s ease-in-out infinite;
+        }
+
+        .nav-item {
+            padding: 18px 28px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
         .nav-item::before {
             content: '';
             position: absolute;
@@ -203,99 +414,96 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s;
+            background: linear-gradient(
+                90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.2), 
+                transparent
+            );
+            transition: left 0.6s;
         }
-        
+
         .nav-item:hover::before {
             left: 100%;
         }
-        
+
         .nav-item:hover {
-            transform: translateY(-2px);
-            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px) scale(1.05);
+            background: rgba(255, 255, 255, 0.12);
             border-color: rgba(255, 255, 255, 0.3);
             box-shadow: 
-                0 10px 25px rgba(102, 126, 234, 0.2),
+                0 15px 35px rgba(99, 102, 241, 0.3),
                 inset 0 1px 0 rgba(255, 255, 255, 0.3);
         }
-        
+
         .nav-item.active {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.3) 0%, rgba(118, 75, 162, 0.3) 100%);
-            border: 1px solid rgba(102, 126, 234, 0.5);
+            background: linear-gradient(
+                135deg, 
+                rgba(99, 102, 241, 0.4) 0%, 
+                rgba(139, 92, 246, 0.4) 100%
+            );
+            border: 1px solid rgba(99, 102, 241, 0.5);
             box-shadow: 
-                0 10px 30px rgba(102, 126, 234, 0.3),
-                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+                0 15px 35px rgba(99, 102, 241, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
         }
-        
-        /* Premium FAB */
+
+        /* 3D FAB with Advanced Effects */
         .premium-fab {
-            background: linear-gradient(135deg, #667EEA 0%, #764BA2 50%, #00D2FF 100%);
+            background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 50%, #06B6D4 100%);
             border-radius: 50%;
             box-shadow: 
-                0 15px 35px rgba(102, 126, 234, 0.4),
-                0 5px 15px rgba(0, 0, 0, 0.2),
-                inset 0 1px 0 rgba(255, 255, 255, 0.2);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        
-        .premium-fab:hover {
-            transform: scale(1.1) rotate(5deg);
-            box-shadow: 
-                0 25px 50px rgba(102, 126, 234, 0.6),
-                0 10px 25px rgba(0, 0, 0, 0.3),
+                0 20px 40px rgba(99, 102, 241, 0.5),
+                0 8px 20px rgba(0, 0, 0, 0.3),
                 inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
         }
-        
-        /* Hero Section */
+
+        .premium-fab::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.2) 50%, transparent 70%);
+            border-radius: 50%;
+            animation: rotate-slow 3s linear infinite;
+        }
+
+        .premium-fab:hover {
+            transform: scale(1.15) rotate(8deg);
+            box-shadow: 
+                0 30px 60px rgba(99, 102, 241, 0.8),
+                0 15px 35px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4);
+        }
+
+        /* Hero Section with Depth */
         .hero-glow {
-            background: radial-gradient(circle at center, rgba(102, 126, 234, 0.3) 0%, transparent 70%);
-            animation: pulse 4s ease-in-out infinite;
+            background: radial-gradient(
+                ellipse at center, 
+                rgba(99, 102, 241, 0.4) 0%, 
+                rgba(139, 92, 246, 0.3) 30%,
+                rgba(6, 182, 212, 0.2) 60%,
+                transparent 80%
+            );
+            animation: pulse 6s ease-in-out infinite;
         }
-        
-        /* Loading Animation */
-        .shimmer {
-            background: linear-gradient(90deg, 
-                rgba(255, 255, 255, 0) 0%, 
-                rgba(255, 255, 255, 0.1) 50%, 
-                rgba(255, 255, 255, 0) 100%);
-            background-size: 200% 100%;
-            animation: shimmer 2s ease-in-out infinite;
-        }
-        
-        /* Smooth Scroll */
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        
-        ::-webkit-scrollbar-track {
-            background: rgba(255, 255, 255, 0.05);
-        }
-        
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(135deg, #667EEA, #764BA2);
-            border-radius: 4px;
-        }
-        
-        ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(135deg, #764BA2, #00D2FF);
-        }
-        
-        /* Button Effects */
+
+        /* Advanced Button Effects */
         .btn-premium {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
-            backdrop-filter: blur(10px);
+            background: linear-gradient(135deg, 
+                rgba(99, 102, 241, 0.2) 0%, 
+                rgba(139, 92, 246, 0.2) 100%);
+            backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
             overflow: hidden;
         }
-        
+
         .btn-premium::before {
             content: '';
             position: absolute;
@@ -303,102 +511,169 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            transition: left 0.5s;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+            transition: left 0.6s;
         }
-        
+
         .btn-premium:hover::before {
             left: 100%;
         }
-        
+
         .btn-premium:hover {
-            transform: translateY(-2px);
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.3) 0%, rgba(118, 75, 162, 0.3) 100%);
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+            transform: translateY(-3px);
+            background: linear-gradient(135deg, 
+                rgba(99, 102, 241, 0.4) 0%, 
+                rgba(139, 92, 246, 0.4) 100%);
+            box-shadow: 
+                0 15px 35px rgba(99, 102, 241, 0.4),
+                0 5px 15px rgba(0, 0, 0, 0.2);
         }
-        
-        /* Stats Counter Animation */
+
+        /* Counter Animation with Neon Effect */
         .counter {
-            background: linear-gradient(135deg, #667EEA, #764BA2);
+            background: linear-gradient(135deg, #6366F1, #8B5CF6, #06B6D4);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            filter: drop-shadow(0 0 10px rgba(99, 102, 241, 0.5));
         }
-        
-        /* Ripple Effect */
+
+        /* Advanced Ripple Effect */
         .ripple {
             position: absolute;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.3);
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.2));
             transform: scale(0);
-            animation: rippleAnimation 0.6s ease-out;
+            animation: rippleExpand 0.8s ease-out;
+            pointer-events: none;
         }
-        
-        @keyframes rippleAnimation {
-            to {
-                transform: scale(4);
-                opacity: 0;
-            }
+
+        /* Parallax Scroll Effects */
+        .parallax {
+            transform: translateZ(0);
+            transition: transform 0.3s ease-out;
         }
-        
-        /* Mobile Responsive */
+
+        /* Interactive 3D Cards */
+        .card-3d {
+            perspective: 1000px;
+        }
+
+        .card-3d-inner {
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .card-3d:hover .card-3d-inner {
+            transform: rotateY(10deg) rotateX(5deg);
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
             .premium-nav {
                 margin: 0 15px 15px 15px;
             }
             
             .nav-item {
-                padding: 12px 16px;
-                min-width: 50px;
+                padding: 14px 18px;
+                min-width: 52px;
             }
             
             .premium-fab {
-                width: 48px;
-                height: 48px;
+                width: 52px;
+                height: 52px;
+            }
+
+            .bento-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                padding: 1rem;
+            }
+        }
+
+        /* Scroll Indicators */
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #6366F1, #8B5CF6, #06B6D4);
+            transform-origin: left;
+            transform: scaleX(0);
+            z-index: 9999;
+        }
+
+        /* Loading Animation */
+        .loading-shimmer {
+            background: linear-gradient(
+                90deg, 
+                rgba(255, 255, 255, 0) 0%, 
+                rgba(255, 255, 255, 0.1) 50%, 
+                rgba(255, 255, 255, 0) 100%
+            );
+            background-size: 200% 100%;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
             }
         }
     </style>
 </head>
 <body class="min-h-screen relative">
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="customCursor"></div>
+    
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator" id="scrollIndicator"></div>
+    
     <!-- Floating Particles Background -->
     <div class="floating-particles" id="particles"></div>
     
     <!-- Header -->
     <header class="relative z-10">
         <!-- Status Bar -->
-        <div class="glass px-6 py-2 text-center text-white/80 text-sm">
+        <div class="liquid-glass px-6 py-2 text-center text-white/80 text-sm">
             <div class="flex items-center justify-center gap-4">
                 <span class="flex items-center gap-2">
-                    <i class="fas fa-wifi text-primary"></i>
-                    آنلاین
+                    <i class="fas fa-wifi text-neonBlue animate-pulse"></i>
+                    <span class="neon-text">آنلاین</span>
                 </span>
                 <span class="flex items-center gap-2">
-                    <i class="fas fa-signal text-primary"></i>
-                    اتصال قوی
+                    <i class="fas fa-signal text-neonPurple animate-glow"></i>
+                    <span class="neon-text">اتصال قوی</span>
                 </span>
                 <span class="flex items-center gap-2">
-                    <i class="fas fa-battery-three-quarters text-primary"></i>
-                    ۸۵٪
+                    <i class="fas fa-battery-three-quarters text-neonPink animate-bounce-slow"></i>
+                    <span class="neon-text">۸۵٪</span>
                 </span>
             </div>
         </div>
         
         <!-- Enhanced Header -->
-        <div class="glass-strong m-6 p-6 rounded-3xl relative overflow-hidden">
-            <div class="absolute inset-0 bg-gradient-to-r from-primary/20 via-transparent to-secondary/20"></div>
+        <div class="premium-card m-6 p-8 rounded-3xl relative overflow-hidden card-3d">
+            <div class="absolute inset-0 bg-gradient-to-r from-primary/30 via-transparent to-secondary/30"></div>
             <div class="relative z-10 flex items-center justify-between">
-                <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 gradient-border rounded-2xl flex items-center justify-center">
-                        <i class="fas fa-map-marker-alt text-white text-xl"></i>
+                <div class="flex items-center gap-6">
+                    <div class="liquid-glass w-16 h-16 rounded-3xl flex items-center justify-center animate-glow">
+                        <i class="fas fa-map-marker-alt text-white text-2xl"></i>
                     </div>
                     <div>
-                        <h1 class="text-2xl font-bold gradient-text">Tehranak Premium</h1>
-                        <p class="text-white/60 text-sm">سامانه املاک آینده</p>
+                        <h1 class="text-3xl font-bold gradient-text neon-text">Tehranak 2025 Premium</h1>
+                        <p class="text-white/70 text-lg">سامانه املاک آینده</p>
                     </div>
                 </div>
-                <button class="btn-premium px-6 py-3 rounded-2xl text-white font-medium">
-                    <i class="fas fa-plus mr-2"></i>
-                    افزودن ملک
+                <button class="btn-premium px-8 py-4 rounded-3xl text-white font-bold text-lg relative overflow-hidden">
+                    <span class="relative z-10">
+                        <i class="fas fa-plus mr-3"></i>
+                        افزودن ملک
+                    </span>
                 </button>
             </div>
         </div>
@@ -406,29 +681,29 @@
     
     <!-- Hero Section -->
     <section class="relative z-10 px-6 mb-8">
-        <div class="premium-card p-8 rounded-3xl hero-glow relative overflow-hidden">
-            <div class="absolute inset-0 bg-gradient-to-br from-primary/30 via-secondary/20 to-accent/30"></div>
+        <div class="premium-card p-10 rounded-3xl hero-glow relative overflow-hidden card-3d">
+            <div class="absolute inset-0 bg-gradient-to-br from-primary/40 via-secondary/30 to-accent/40"></div>
             <div class="relative z-10">
-                <div class="text-center mb-6">
-                    <h2 class="text-3xl font-bold text-white mb-3">
+                <div class="text-center mb-8">
+                    <h2 class="text-4xl font-bold text-white mb-4 gradient-text">
                         خانه رویایی‌تان را پیدا کنید
                     </h2>
-                    <p class="text-white/70 text-lg">
-                        با تکنولوژی پیشرفته و طراحی مدرن
+                    <p class="text-white/80 text-xl neon-text">
+                        با تکنولوژی پیشرفته و دیزاین مدرن 2025
                     </p>
                 </div>
                 
-                <!-- Search Bar -->
-                <div class="relative max-w-md mx-auto">
-                    <div class="glass-strong rounded-2xl p-2 flex items-center gap-3">
-                        <div class="flex-1 flex items-center gap-3 px-4 py-3">
-                            <i class="fas fa-search text-white/60"></i>
+                <!-- Advanced Search Bar -->
+                <div class="relative max-w-2xl mx-auto">
+                    <div class="liquid-glass rounded-3xl p-3 flex items-center gap-4">
+                        <div class="flex-1 flex items-center gap-4 px-6 py-4">
+                            <i class="fas fa-search text-white/70 text-xl"></i>
                             <input type="text" 
                                    placeholder="جستجو در شهر، منطقه یا آدرس..." 
-                                   class="bg-transparent text-white placeholder-white/60 outline-none flex-1">
+                                   class="bg-transparent text-white placeholder-white/60 outline-none flex-1 text-lg">
                         </div>
-                        <button class="premium-fab w-12 h-12 flex items-center justify-center text-white">
-                            <i class="fas fa-microphone"></i>
+                        <button class="premium-fab w-16 h-16 flex items-center justify-center text-white">
+                            <i class="fas fa-microphone text-xl"></i>
                         </button>
                     </div>
                 </div>
@@ -436,141 +711,174 @@
         </div>
     </section>
     
-    <!-- Quick Stats -->
+    <!-- Bento Grid Stats -->
     <section class="relative z-10 px-6 mb-8">
-        <div class="grid grid-cols-2 gap-4">
-            <div class="premium-card p-6 rounded-3xl slide-up">
-                <div class="flex items-center justify-between mb-4">
+        <div class="bento-grid">
+            <!-- Large Stat Card -->
+            <div class="bento-card wide premium-card p-8 rounded-3xl slide-up card-3d">
+                <div class="flex items-center justify-between mb-6">
                     <div>
-                        <p class="text-white/60 text-sm mb-1">کل املاک</p>
-                        <p class="text-3xl font-bold counter" data-count="12543">0</p>
+                        <p class="text-white/70 text-lg mb-2">کل املاک</p>
+                        <p class="text-5xl font-bold counter neon-text" data-count="12543">0</p>
+                        <div class="flex items-center gap-2 text-green-400 text-lg mt-3">
+                            <i class="fas fa-arrow-up"></i>
+                            <span class="neon-text">+۱۲٪ امروز</span>
+                        </div>
                     </div>
-                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-                        <i class="fas fa-home text-white text-xl"></i>
+                    <div class="w-20 h-20 rounded-3xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center animate-glow">
+                        <i class="fas fa-home text-white text-3xl"></i>
                     </div>
-                </div>
-                <div class="flex items-center gap-2 text-green-400 text-sm">
-                    <i class="fas fa-arrow-up"></i>
-                    <span>+۱۲٪ امروز</span>
                 </div>
             </div>
             
-            <div class="premium-card p-6 rounded-3xl slide-up" style="animation-delay: 0.1s;">
-                <div class="flex items-center justify-between mb-4">
-                    <div>
-                        <p class="text-white/60 text-sm mb-1">مشاوران</p>
-                        <p class="text-3xl font-bold counter" data-count="892">0</p>
+            <!-- Medium Stat Card -->
+            <div class="bento-card tall premium-card p-6 rounded-3xl slide-up card-3d" style="animation-delay: 0.1s;">
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-3xl bg-gradient-to-br from-secondary to-accent flex items-center justify-center animate-float">
+                        <i class="fas fa-users text-white text-2xl"></i>
                     </div>
-                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-secondary to-accent flex items-center justify-center">
-                        <i class="fas fa-users text-white text-xl"></i>
+                    <p class="text-white/70 text-sm mb-1">مشاوران</p>
+                    <p class="text-3xl font-bold counter neon-text" data-count="892">0</p>
+                    <div class="flex items-center justify-center gap-2 text-blue-400 text-sm mt-2">
+                        <i class="fas fa-arrow-up"></i>
+                        <span class="neon-text">+۸٪ این هفته</span>
                     </div>
                 </div>
-                <div class="flex items-center gap-2 text-blue-400 text-sm">
-                    <i class="fas fa-arrow-up"></i>
-                    <span>+۸٪ این هفته</span>
+            </div>
+            
+            <!-- Small Stat Cards -->
+            <div class="bento-card square premium-card p-6 rounded-3xl slide-up card-3d" style="animation-delay: 0.2s;">
+                <div class="text-center">
+                    <div class="w-12 h-12 mx-auto mb-3 rounded-2xl bg-gradient-to-br from-accent to-accent2 flex items-center justify-center animate-pulse-slow">
+                        <i class="fas fa-chart-line text-white text-lg"></i>
+                    </div>
+                    <p class="text-white/60 text-xs mb-1">فروش امروز</p>
+                    <p class="text-xl font-bold counter" data-count="156">0</p>
+                </div>
+            </div>
+            
+            <div class="bento-card square premium-card p-6 rounded-3xl slide-up card-3d" style="animation-delay: 0.3s;">
+                <div class="text-center">
+                    <div class="w-12 h-12 mx-auto mb-3 rounded-2xl bg-gradient-to-br from-accent2 to-primary flex items-center justify-center animate-bounce-slow">
+                        <i class="fas fa-eye text-white text-lg"></i>
+                    </div>
+                    <p class="text-white/60 text-xs mb-1">بازدید امروز</p>
+                    <p class="text-xl font-bold counter" data-count="2847">0</p>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- Categories -->
+    <!-- Categories with 3D Cards -->
     <section class="relative z-10 px-6 mb-8">
-        <h3 class="text-xl font-bold text-white mb-6">دسته‌بندی‌ها</h3>
-        <div class="grid grid-cols-2 gap-4">
-            <div class="premium-card p-6 rounded-3xl scale-in hover:scale-105">
+        <h3 class="text-2xl font-bold gradient-text mb-8 text-center neon-text">دسته‌بندی‌های پیشرفته</h3>
+        <div class="grid grid-cols-2 gap-6">
+            <div class="premium-card p-8 rounded-3xl scale-in hover:scale-105 card-3d">
                 <div class="text-center">
-                    <div class="w-16 h-16 mx-auto mb-4 rounded-3xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-                        <i class="fas fa-building text-white text-2xl"></i>
+                    <div class="w-20 h-20 mx-auto mb-6 rounded-3xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center animate-glow">
+                        <i class="fas fa-building text-white text-3xl"></i>
                     </div>
-                    <h4 class="text-white font-semibold mb-2">آپارتمان</h4>
-                    <p class="text-white/60 text-sm">۷۲۴۳ ملک</p>
+                    <h4 class="text-white font-bold text-xl mb-3 gradient-text">آپارتمان</h4>
+                    <p class="text-white/70 text-lg">۷,۲۴۳ ملک</p>
+                    <div class="mt-4 w-full h-2 bg-white/10 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-primary to-secondary loading-shimmer"></div>
+                    </div>
                 </div>
             </div>
             
-            <div class="premium-card p-6 rounded-3xl scale-in hover:scale-105" style="animation-delay: 0.1s;">
+            <div class="premium-card p-8 rounded-3xl scale-in hover:scale-105 card-3d" style="animation-delay: 0.1s;">
                 <div class="text-center">
-                    <div class="w-16 h-16 mx-auto mb-4 rounded-3xl bg-gradient-to-br from-secondary to-accent flex items-center justify-center">
-                        <i class="fas fa-home text-white text-2xl"></i>
+                    <div class="w-20 h-20 mx-auto mb-6 rounded-3xl bg-gradient-to-br from-secondary to-accent flex items-center justify-center animate-float">
+                        <i class="fas fa-home text-white text-3xl"></i>
                     </div>
-                    <h4 class="text-white font-semibold mb-2">ویلا</h4>
-                    <p class="text-white/60 text-sm">۲۱۸۴ ملک</p>
+                    <h4 class="text-white font-bold text-xl mb-3 gradient-text">ویلا</h4>
+                    <p class="text-white/70 text-lg">۲,۱۸۴ ملک</p>
+                    <div class="mt-4 w-full h-2 bg-white/10 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-secondary to-accent loading-shimmer"></div>
+                    </div>
                 </div>
             </div>
             
-            <div class="premium-card p-6 rounded-3xl scale-in hover:scale-105" style="animation-delay: 0.2s;">
+            <div class="premium-card p-8 rounded-3xl scale-in hover:scale-105 card-3d" style="animation-delay: 0.2s;">
                 <div class="text-center">
-                    <div class="w-16 h-16 mx-auto mb-4 rounded-3xl bg-gradient-to-br from-accent to-accent2 flex items-center justify-center">
-                        <i class="fas fa-store text-white text-2xl"></i>
+                    <div class="w-20 h-20 mx-auto mb-6 rounded-3xl bg-gradient-to-br from-accent to-accent2 flex items-center justify-center animate-pulse-slow">
+                        <i class="fas fa-store text-white text-3xl"></i>
                     </div>
-                    <h4 class="text-white font-semibold mb-2">تجاری</h4>
-                    <p class="text-white/60 text-sm">۱۵۹۷ ملک</p>
+                    <h4 class="text-white font-bold text-xl mb-3 gradient-text">تجاری</h4>
+                    <p class="text-white/70 text-lg">۱,۵۹۷ ملک</p>
+                    <div class="mt-4 w-full h-2 bg-white/10 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-accent to-accent2 loading-shimmer"></div>
+                    </div>
                 </div>
             </div>
             
-            <div class="premium-card p-6 rounded-3xl scale-in hover:scale-105" style="animation-delay: 0.3s;">
+            <div class="premium-card p-8 rounded-3xl scale-in hover:scale-105 card-3d" style="animation-delay: 0.3s;">
                 <div class="text-center">
-                    <div class="w-16 h-16 mx-auto mb-4 rounded-3xl bg-gradient-to-br from-accent2 to-primary flex items-center justify-center">
-                        <i class="fas fa-industry text-white text-2xl"></i>
+                    <div class="w-20 h-20 mx-auto mb-6 rounded-3xl bg-gradient-to-br from-accent2 to-primary flex items-center justify-center animate-bounce-slow">
+                        <i class="fas fa-industry text-white text-3xl"></i>
                     </div>
-                    <h4 class="text-white font-semibold mb-2">صنعتی</h4>
-                    <p class="text-white/60 text-sm">۱۵۱۹ ملک</p>
+                    <h4 class="text-white font-bold text-xl mb-3 gradient-text">صنعتی</h4>
+                    <p class="text-white/70 text-lg">۱,۵۱۹ ملک</p>
+                    <div class="mt-4 w-full h-2 bg-white/10 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-accent2 to-primary loading-shimmer"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- Recent Properties -->
+    <!-- Enhanced Properties List -->
     <section class="relative z-10 px-6 mb-8">
-        <div class="flex items-center justify-between mb-6">
-            <h3 class="text-xl font-bold text-white">املاک جدید</h3>
-            <button class="text-primary hover:text-primary/80 transition-colors">
-                <span class="text-sm">مشاهده همه</span>
-                <i class="fas fa-arrow-left mr-2"></i>
+        <div class="flex items-center justify-between mb-8">
+            <h3 class="text-2xl font-bold gradient-text neon-text">املاک جدید</h3>
+            <button class="text-primary hover:text-primary/80 transition-colors btn-premium px-6 py-3 rounded-2xl">
+                <span class="text-lg">مشاهده همه</span>
+                <i class="fas fa-arrow-left mr-3"></i>
             </button>
         </div>
         
-        <div class="space-y-4">
-            <div class="premium-card p-6 rounded-3xl slide-up">
-                <div class="flex gap-4">
-                    <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center flex-shrink-0">
-                        <i class="fas fa-image text-white text-2xl"></i>
+        <div class="space-y-6">
+            <div class="premium-card p-8 rounded-3xl slide-up card-3d">
+                <div class="flex gap-6">
+                    <div class="w-24 h-24 rounded-3xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center flex-shrink-0 animate-glow">
+                        <i class="fas fa-image text-white text-3xl"></i>
                     </div>
                     <div class="flex-1">
-                        <div class="flex items-start justify-between mb-2">
-                            <h4 class="text-white font-semibold">آپارتمان لوکس نیاوران</h4>
-                            <span class="bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm">جدید</span>
+                        <div class="flex items-start justify-between mb-3">
+                            <h4 class="text-white font-bold text-xl">آپارتمان لوکس نیاوران</h4>
+                            <span class="bg-green-500/30 text-green-300 px-4 py-2 rounded-full text-sm neon-text font-bold">جدید</span>
                         </div>
-                        <p class="text-white/60 text-sm mb-3">واقع در منطقه نیاوران، امکانات کامل</p>
+                        <p class="text-white/70 text-lg mb-4">واقع در منطقه نیاوران، امکانات کامل</p>
                         <div class="flex items-center justify-between">
-                            <div class="flex items-center gap-4 text-white/60 text-sm">
-                                <span><i class="fas fa-bed mr-1"></i>۳ خوابه</span>
-                                <span><i class="fas fa-bath mr-1"></i>۲ حمام</span>
-                                <span><i class="fas fa-ruler-combined mr-1"></i>۱۲۰ متر</span>
+                            <div class="flex items-center gap-6 text-white/60 text-lg">
+                                <span><i class="fas fa-bed mr-2"></i>۳ خوابه</span>
+                                <span><i class="fas fa-bath mr-2"></i>۲ حمام</span>
+                                <span><i class="fas fa-ruler-combined mr-2"></i>۱۲۰ متر</span>
                             </div>
-                            <p class="text-primary font-bold">۸.۵ میلیارد</p>
+                            <p class="text-2xl font-bold gradient-text neon-text">۸.۵ میلیارد</p>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div class="premium-card p-6 rounded-3xl slide-up" style="animation-delay: 0.1s;">
-                <div class="flex gap-4">
-                    <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-secondary to-accent flex items-center justify-center flex-shrink-0">
-                        <i class="fas fa-image text-white text-2xl"></i>
+            <div class="premium-card p-8 rounded-3xl slide-up card-3d" style="animation-delay: 0.1s;">
+                <div class="flex gap-6">
+                    <div class="w-24 h-24 rounded-3xl bg-gradient-to-br from-secondary to-accent flex items-center justify-center flex-shrink-0 animate-float">
+                        <i class="fas fa-image text-white text-3xl"></i>
                     </div>
                     <div class="flex-1">
-                        <div class="flex items-start justify-between mb-2">
-                            <h4 class="text-white font-semibold">ویلای مستقل زعفرانیه</h4>
-                            <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-sm">ویژه</span>
+                        <div class="flex items-start justify-between mb-3">
+                            <h4 class="text-white font-bold text-xl">ویلای مستقل زعفرانیه</h4>
+                            <span class="bg-blue-500/30 text-blue-300 px-4 py-2 rounded-full text-sm neon-text font-bold">ویژه</span>
                         </div>
-                        <p class="text-white/60 text-sm mb-3">باغ اختصاصی، استخر شخصی</p>
+                        <p class="text-white/70 text-lg mb-4">باغ اختصاصی، استخر شخصی</p>
                         <div class="flex items-center justify-between">
-                            <div class="flex items-center gap-4 text-white/60 text-sm">
-                                <span><i class="fas fa-bed mr-1"></i>۵ خوابه</span>
-                                <span><i class="fas fa-bath mr-1"></i>۴ حمام</span>
-                                <span><i class="fas fa-ruler-combined mr-1"></i>۴۵۰ متر</span>
+                            <div class="flex items-center gap-6 text-white/60 text-lg">
+                                <span><i class="fas fa-bed mr-2"></i>۵ خوابه</span>
+                                <span><i class="fas fa-bath mr-2"></i>۴ حمام</span>
+                                <span><i class="fas fa-ruler-combined mr-2"></i>۴۵۰ متر</span>
                             </div>
-                            <p class="text-primary font-bold">۲۵ میلیارد</p>
+                            <p class="text-2xl font-bold gradient-text neon-text">۲۵ میلیارد</p>
                         </div>
                     </div>
                 </div>
@@ -583,66 +891,144 @@
         <div class="flex justify-around items-center">
             <!-- خانه -->
             <div class="nav-item active flex flex-col items-center cursor-pointer">
-                <div class="text-xl mb-2">
+                <div class="text-2xl mb-2">
                     <i class="fas fa-home"></i>
                 </div>
-                <div class="text-xs font-medium">خانه</div>
+                <div class="text-xs font-bold">خانه</div>
             </div>
             
             <!-- جستجو -->
             <div class="nav-item flex flex-col items-center cursor-pointer">
-                <div class="text-xl mb-2">
+                <div class="text-2xl mb-2">
                     <i class="fas fa-search"></i>
                 </div>
-                <div class="text-xs font-medium">جستجو</div>
+                <div class="text-xs font-bold">جستجو</div>
             </div>
             
             <!-- FAB -->
             <div class="flex flex-col items-center cursor-pointer relative">
-                <button class="premium-fab w-16 h-16 flex items-center justify-center text-white mb-2 shadow-lg">
-                    <i class="fas fa-plus text-2xl"></i>
+                <button class="premium-fab w-18 h-18 flex items-center justify-center text-white mb-2 shadow-lg">
+                    <i class="fas fa-plus text-3xl"></i>
                 </button>
-                <div class="text-xs font-medium text-white/80">افزودن</div>
+                <div class="text-xs font-bold text-white/90">افزودن</div>
             </div>
             
             <!-- علاقه‌مندی -->
             <div class="nav-item flex flex-col items-center cursor-pointer">
-                <div class="text-xl mb-2">
+                <div class="text-2xl mb-2">
                     <i class="fas fa-heart"></i>
                 </div>
-                <div class="text-xs font-medium">علاقه‌مندی</div>
+                <div class="text-xs font-bold">علاقه‌مندی</div>
             </div>
             
             <!-- پروفایل -->
             <div class="nav-item flex flex-col items-center cursor-pointer">
-                <div class="text-xl mb-2">
+                <div class="text-2xl mb-2">
                     <i class="fas fa-user"></i>
                 </div>
-                <div class="text-xs font-medium">پروفایل</div>
+                <div class="text-xs font-bold">پروفایل</div>
             </div>
         </div>
     </nav>
     
     <!-- Spacer for fixed navigation -->
-    <div class="h-32"></div>
+    <div class="h-36"></div>
     
     <script>
-        // Create floating particles
-        function createParticles() {
-            const particlesContainer = document.getElementById('particles');
-            const particleCount = 20;
+        // Custom Cursor Implementation
+        class CustomCursor {
+            constructor() {
+                this.cursor = document.getElementById('customCursor');
+                this.hoverElements = document.querySelectorAll('a, button, .nav-item, .premium-card, .btn-premium');
+                
+                this.pos = { x: 0, y: 0 };
+                this.mouse = { x: 0, y: 0 };
+                
+                this.init();
+            }
             
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.animationDelay = Math.random() * 8 + 's';
-                particle.style.animationDuration = (Math.random() * 3 + 5) + 's';
-                particlesContainer.appendChild(particle);
+            init() {
+                document.addEventListener('mousemove', (e) => {
+                    this.mouse.x = e.clientX;
+                    this.mouse.y = e.clientY;
+                });
+                
+                this.hoverElements.forEach(el => {
+                    el.addEventListener('mouseenter', () => {
+                        this.cursor.classList.add('hover');
+                    });
+                    
+                    el.addEventListener('mouseleave', () => {
+                        this.cursor.classList.remove('hover');
+                    });
+                });
+                
+                this.animate();
+            }
+            
+            animate() {
+                this.pos.x += (this.mouse.x - this.pos.x) * 0.1;
+                this.pos.y += (this.mouse.y - this.pos.y) * 0.1;
+                
+                this.cursor.style.transform = `translate(${this.pos.x - 10}px, ${this.pos.y - 10}px)`;
+                
+                requestAnimationFrame(() => this.animate());
             }
         }
         
-        // Counter animation
+        // Advanced Particle System
+        class ParticleSystem {
+            constructor() {
+                this.container = document.getElementById('particles');
+                this.particles = [];
+                this.maxParticles = 30;
+                
+                this.init();
+            }
+            
+            init() {
+                this.createParticles();
+                this.animateParticles();
+            }
+            
+            createParticles() {
+                for (let i = 0; i < this.maxParticles; i++) {
+                    this.createParticle();
+                }
+            }
+            
+            createParticle() {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                const size = Math.random() > 0.7 ? 'large' : Math.random() > 0.4 ? 'normal' : 'small';
+                if (size !== 'normal') {
+                    particle.classList.add(size);
+                }
+                
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 12 + 's';
+                particle.style.animationDuration = (Math.random() * 6 + 8) + 's';
+                
+                this.container.appendChild(particle);
+                
+                // Remove and recreate particle after animation
+                setTimeout(() => {
+                    if (particle.parentNode) {
+                        particle.remove();
+                        this.createParticle();
+                    }
+                }, (Math.random() * 6 + 8) * 1000);
+            }
+            
+            animateParticles() {
+                setInterval(() => {
+                    this.createParticle();
+                }, 800);
+            }
+        }
+        
+        // Enhanced Counter Animation
         function animateCounter(element) {
             const target = parseInt(element.getAttribute('data-count'));
             const increment = target / 100;
@@ -655,10 +1041,31 @@
                     clearInterval(timer);
                 }
                 element.textContent = Math.floor(current).toLocaleString('fa-IR');
-            }, 20);
+            }, 30);
         }
         
-        // Intersection Observer for animations
+        // Scroll Indicator
+        function updateScrollIndicator() {
+            const scrollIndicator = document.getElementById('scrollIndicator');
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = scrollTop / docHeight;
+            
+            scrollIndicator.style.transform = `scaleX(${scrollPercent})`;
+        }
+        
+        // Parallax Effect
+        function handleParallax() {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.parallax');
+            
+            parallaxElements.forEach(element => {
+                const speed = element.dataset.speed || 0.5;
+                element.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        }
+        
+        // Intersection Observer with enhanced animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -677,16 +1084,25 @@
                     // Add animation classes
                     element.style.opacity = '1';
                     element.style.transform = 'translateY(0)';
+                    
+                    // Stagger animations for child elements
+                    const children = element.querySelectorAll('.animate-on-scroll');
+                    children.forEach((child, index) => {
+                        setTimeout(() => {
+                            child.style.opacity = '1';
+                            child.style.transform = 'translateY(0)';
+                        }, index * 100);
+                    });
                 }
             });
         }, observerOptions);
         
-        // Ripple effect for buttons
-        function createRipple(event) {
+        // Enhanced Ripple Effect
+        function createAdvancedRipple(event) {
             const button = event.currentTarget;
             const rect = button.getBoundingClientRect();
             const ripple = document.createElement('span');
-            const size = Math.max(rect.width, rect.height);
+            const size = Math.max(rect.width, rect.height) * 2;
             const x = event.clientX - rect.left - size / 2;
             const y = event.clientY - rect.top - size / 2;
             
@@ -699,16 +1115,16 @@
             
             setTimeout(() => {
                 ripple.remove();
-            }, 600);
+            }, 800);
         }
         
-        // Navigation item click handler
+        // Navigation Handler with 3D effects
         function handleNavClick(event) {
             // Add click animation
-            event.currentTarget.style.transform = 'translateY(-2px) scale(1.05)';
+            event.currentTarget.style.transform = 'translateY(-3px) scale(1.05) rotateX(5deg)';
             setTimeout(() => {
                 event.currentTarget.style.transform = '';
-            }, 200);
+            }, 300);
             
             // Remove active from all items
             document.querySelectorAll('.nav-item').forEach(item => {
@@ -719,41 +1135,100 @@
             event.currentTarget.classList.add('active');
             
             // Create ripple effect
-            createRipple(event);
+            createAdvancedRipple(event);
             
             // Log interaction
             console.log('ناوبری به بخش جدید:', event.currentTarget.textContent.trim());
         }
         
+        // Enhanced Mouse Movement Effects
+        function handleMouseMove(event) {
+            const cards = document.querySelectorAll('.card-3d');
+            const mouseX = event.clientX;
+            const mouseY = event.clientY;
+            
+            cards.forEach(card => {
+                const rect = card.getBoundingClientRect();
+                const cardX = rect.left + rect.width / 2;
+                const cardY = rect.top + rect.height / 2;
+                
+                const rotateX = (mouseY - cardY) / 30;
+                const rotateY = (cardX - mouseX) / 30;
+                
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            });
+        }
+        
+        // Keyboard Navigation
+        function handleKeyboardNavigation(event) {
+            const navItems = document.querySelectorAll('.nav-item');
+            let activeIndex = Array.from(navItems).findIndex(item => item.classList.contains('active'));
+            
+            if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+                event.preventDefault();
+                
+                if (event.key === 'ArrowRight') {
+                    activeIndex = (activeIndex + 1) % navItems.length;
+                } else {
+                    activeIndex = (activeIndex - 1 + navItems.length) % navItems.length;
+                }
+                
+                navItems[activeIndex].click();
+                navItems[activeIndex].focus();
+            }
+        }
+        
+        // Performance optimization
+        let ticking = false;
+        
+        function requestTick() {
+            if (!ticking) {
+                requestAnimationFrame(updateScrollIndicator);
+                requestAnimationFrame(handleParallax);
+                ticking = true;
+            }
+        }
+        
         // Initialize when DOM is loaded
         document.addEventListener('DOMContentLoaded', function() {
-            createParticles();
+            // Initialize systems
+            new CustomCursor();
+            new ParticleSystem();
             
             // Observe elements for animations
             document.querySelectorAll('.slide-up, .scale-in, .counter').forEach(el => {
                 observer.observe(el);
             });
             
-            // Add click handlers to navigation items
+            // Add click handlers
             document.querySelectorAll('.nav-item').forEach(item => {
                 item.addEventListener('click', handleNavClick);
             });
             
-            // Add click handlers to premium cards
-            document.querySelectorAll('.premium-card').forEach(card => {
-                card.addEventListener('click', function(e) {
-                    createRipple({ currentTarget: this, clientX: e.clientX, clientY: e.clientY });
+            document.querySelectorAll('.premium-card, .btn-premium').forEach(element => {
+                element.addEventListener('click', function(e) {
+                    createAdvancedRipple({ currentTarget: this, clientX: e.clientX, clientY: e.clientY });
                 });
             });
             
-            console.log('🎉 Tehranak Premium بارگذاری شد! طراحی آینده‌نگرانه فعال است.');
+            // Add keyboard navigation
+            document.addEventListener('keydown', handleKeyboardNavigation);
+            
+            // Add mouse movement effects
+            document.addEventListener('mousemove', handleMouseMove);
+            
+            // Add scroll effects
+            window.addEventListener('scroll', requestTick);
+            
+            console.log('🚀 Tehranak 2025 Premium با جدیدترین تکنولوژی‌های دیزاین بارگذاری شد!');
         });
         
-        // Smooth scroll to top when scrolling to bottom
+        // Enhanced scroll handling with throttling
         let lastScrollTop = 0;
         window.addEventListener('scroll', function() {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             
+            // Hide/show navigation on scroll
             if (scrollTop > lastScrollTop && scrollTop > 100) {
                 // Scrolling down
                 document.querySelector('.premium-nav').style.transform = 'translateY(100%)';
@@ -762,17 +1237,36 @@
                 document.querySelector('.premium-nav').style.transform = 'translateY(0)';
             }
             
+            // Update scroll indicator
+            updateScrollIndicator();
+            
+            // Handle parallax effects
+            handleParallax();
+            
             lastScrollTop = scrollTop;
+            ticking = false;
         });
         
-        // Add parallax effect to hero section
-        window.addEventListener('scroll', function() {
-            const scrolled = window.pageYOffset;
-            const parallax = document.querySelector('.hero-glow');
-            if (parallax) {
-                parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
-            }
-        });
+        // Touch device optimizations
+        if ('ontouchstart' in window) {
+            document.body.classList.add('touch-device');
+            
+            // Disable hover effects on touch devices
+            const style = document.createElement('style');
+            style.textContent = `
+                .touch-device .premium-card:hover,
+                .touch-device .nav-item:hover,
+                .touch-device .btn-premium:hover {
+                    transform: none !important;
+                }
+            `;
+            document.head.appendChild(style);
+        }
+        
+        // Accessibility enhancements
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            document.body.classList.add('reduce-motion');
+        }
     </script>
 </body>
 </html>
