@@ -178,16 +178,19 @@
             backdrop-filter: blur(30px);
             -webkit-backdrop-filter: blur(30px);
             border: 2px solid rgba(125, 64, 254, 0.3);
-            border-top: none;
-            border-radius: 25px 25px 0 0;
+            border-radius: 25px;
             box-shadow: 
                 0 -8px 32px rgba(0, 0, 0, 0.5),
                 0 -16px 48px rgba(125, 64, 254, 0.2),
                 0 0 80px rgba(125, 64, 254, 0.1),
+                0 8px 32px rgba(0, 0, 0, 0.4),
+                0 16px 48px rgba(125, 64, 254, 0.15),
                 inset 0 2px 0 rgba(255, 255, 255, 0.1),
                 inset 0 -2px 0 rgba(0, 0, 0, 0.2);
             position: relative;
             overflow: hidden;
+            margin: 0 20px 20px 20px;
+            bottom: 20px;
         }
         
         .nav-glass::before {
@@ -498,7 +501,7 @@
     </div>
 
     <!-- Enhanced 3D Bottom Navigation -->
-    <div class="nav-glass fixed bottom-0 left-0 right-0 z-50">
+    <div class="nav-glass fixed z-50">
         <div class="flex justify-around items-center py-6 px-3">
             <!-- خانه (فعال) -->
             <div class="nav-item active flex flex-col items-center cursor-pointer min-w-[60px]">
